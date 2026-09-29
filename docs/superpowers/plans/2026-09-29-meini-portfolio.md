@@ -1119,7 +1119,7 @@ import { projects } from './projects'
 
 export const site: Site = {
   name: 'Meini Rusiadi',
-  shortName: 'meini.',
+  shortName: 'Meini',
   roles: ['Data & BI Analyst', 'QA', 'Database'],
   headline: { lead: 'Turning messy data into', highlight: 'clear decisions' },
   intro:

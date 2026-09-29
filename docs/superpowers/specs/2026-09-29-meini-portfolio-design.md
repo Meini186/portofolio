@@ -27,7 +27,8 @@ Out of scope for v1: dark mode, i18n (the site is English only), a CMS, analytic
 | Motion level | "Interactive": reveal on scroll, 3D tilt cards, count-up numbers, swipe gallery, magnetic buttons |
 | Stack | Vite + Vue 3 + TypeScript + vue-router + vite-ssg + Tailwind CSS + @vueuse/core |
 | Location | `/Users/karvin/meini/portfolio-web/`, as its own git repo |
-| Hosting | Local only for now. GitHub and Vercel accounts will be decided later |
+| Hosting | Local only for now. It will be pushed to **Meini's** GitHub account and deployed on **Meini's** Vercel account later |
+| Git identity | Repo-local config: Karvin's name with his personal email (`karvinnd1207@gmail.com`). The work email is never used in this repo |
 
 ## 3. Architecture
 
@@ -243,7 +244,8 @@ Code that reads `window` or `document` runs only inside `onMounted`, so the SSR 
 - ESLint (`@vue/eslint-config-typescript`) and Prettier.
 - Conventional Commits. Work happens on feature branches, never directly on `main`.
 - `.gitignore` covers `node_modules/`, `dist/`, and `.superpowers/`.
-- Future Vercel settings: build command `npm run build`, output directory `dist`.
+- Future Vercel settings (Meini's account): build command `npm run build`, output directory `dist`.
+- Open Graph tags need absolute URLs. The site origin comes from `VITE_SITE_URL`, set in Vercel project settings. A local build falls back to `http://localhost:4173`. No secrets are involved, so `.env.example` documents the variable and no `.env` file is committed.
 
 ## 13. Open items
 
@@ -257,7 +259,7 @@ There is no GitHub remote yet, so open items are tracked here. They move to GitH
 | 4 | Terms for projects 1, 2, 5, 11, and current semester / graduation year | Meini | Term labels (hidden if missing) |
 | 5 | Photo (optional) | Meini | Nothing. The hero works without one |
 | 6 | Fix the Shoe Factory ERD, SoundEase Q10, and the MongoDB snippet, if she wants them shown | Meini | Those images only |
-| 7 | Choose the GitHub and Vercel account | Karvin / Meini | Deploy |
+| 7 | Meini creates the GitHub repo and Vercel project, and adds Karvin as a collaborator. Then set `VITE_SITE_URL` | Meini | Deploy and correct OG URLs |
 | 8 | Decide whether to include MyStyle | Meini | Nothing |
 
 Missing content never blocks the build. Every optional field is hidden when it is empty.

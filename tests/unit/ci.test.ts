@@ -21,8 +21,8 @@ describe('CI workflow', () => {
   it('names the job "check", which branch protection and Vercel refer to', () => {
     expect(yml()).toMatch(/jobs:\s*\n\s+check:/)
   })
-  it('cancels an older run on the same ref', () => {
-    expect(yml()).toMatch(/concurrency:[\s\S]*cancel-in-progress: true/)
+  it('cancels an older run on the same PR, but never a run on main (Vercel waits for it)', () => {
+    expect(yml()).toContain("cancel-in-progress: ${{ github.event_name == 'pull_request' }}")
   })
   it('installs exactly the lockfile, takes Node from .nvmrc, and runs the full check', () => {
     expect(yml()).toContain('node-version-file: .nvmrc')
@@ -30,7 +30,17 @@ describe('CI workflow', () => {
     expect(yml()).toContain('npx playwright install --with-deps chromium')
     expect(yml()).toContain('run: npm run check')
   })
-  it('uploads the Playwright report when the job fails', () => {
-    expect(yml()).toMatch(/if: failure\(\)[\s\S]*actions\/upload-artifact@v7[\s\S]*path: playwright-report/)
+  it('uploads the Playwright report when the job fails or times out', () => {
+    expect(yml()).toMatch(/if: \$\{\{ !cancelled\(\) \}\}[\s\S]*actions\/upload-artifact@v7[\s\S]*path: playwright-report/)
+  })
+})
+
+describe('Playwright config', () => {
+  it('writes an HTML report on CI, so the upload step has something to upload', async () => {
+    process.env.CI = 'true'
+    const { default: config } = await import('../../playwright.config')
+    delete process.env.CI
+    expect(JSON.stringify(config.reporter)).toContain('"html"')
+    expect(config.use?.trace).toBe('retain-on-failure')
   })
 })

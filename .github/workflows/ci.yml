@@ -10,7 +10,9 @@ permissions:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Cancel superseded PR runs only. Every commit on main keeps its result,
+  # because Vercel Deployment Checks waits for it before promoting production.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check:
@@ -31,7 +33,8 @@ jobs:
       # typecheck, lint, unit tests, build (includes the privacy check), build tests, e2e
       - run: npm run check
 
-      - if: failure()
+      # Also after a timeout: a hung run is when the report is needed most.
+      - if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
           name: playwright-report

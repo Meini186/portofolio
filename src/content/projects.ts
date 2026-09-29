@@ -154,6 +154,7 @@ export const projects: Project[] = [
       'Built the Figma prototype.',
     ],
     stats: [{ value: 17, label: 'test cases designed' }],
+    links: [{ label: 'Figma prototype', href: 'https://www.figma.com/design/mWHzUu6NFPFFfrrhh5Eq4Y/TSI?node-id=0-1' }],
     images: img('livetix-testing'),
   },
   {
@@ -196,6 +197,12 @@ export const projects: Project[] = [
       'Analysed the problem with a fishbone diagram, and scoped the system with a context diagram and a use case diagram.',
       'Modeled the design with a class diagram, a state transition diagram, and activity diagrams for 7 flows: registration, booking, cancellation, equipment purchase, staff confirmation, and two reports.',
     ],
+    links: [
+      {
+        label: 'Figma prototype',
+        href: 'https://www.figma.com/proto/39bvWBqdMTAVBXI4rPw6ZF/StSport?node-id=2008-1334&starting-point-node-id=2008%3A1332',
+      },
+    ],
     images: img('stsport-booking-system'),
   },
   {
@@ -215,6 +222,12 @@ export const projects: Project[] = [
       'Redesigned the Home page (vertical movie list, less clutter) and the bottom navigation (added F&B and Profile tabs), and merged ticket and F&B ordering into one checkout with a Skip option.',
       'Built the interactive Figma prototype.',
     ],
+    links: [
+      {
+        label: 'Figma prototype',
+        href: 'https://www.figma.com/design/UVW1aiBmklDlm0Bv7fvkhK/Projek-UI%2FUX?node-id=0-1',
+      },
+    ],
     images: img('tix-id-redesign'),
   },
   {
@@ -231,6 +244,9 @@ export const projects: Project[] = [
       'Proposed the project idea: an app that keeps classes running when a teacher is absent.',
       'Wrote the background (Chapter 1) and the AI feature design (Chapter 4): NLP question answering, material recommendations, automatic assignment feedback, and a 24/7 chatbot.',
       'Designed the Figma prototype: sign-up by role, class schedule, AI-generated materials, Ask AI, assignment upload, and profile.',
+    ],
+    links: [
+      { label: 'Prototype video', href: 'https://drive.google.com/file/d/1ZzXqV3XrWFFSDK6ct0jAVn6BwHmGhk6F/view' },
     ],
     images: img('edupal-ai-teacher'),
   },

@@ -1,9 +1,17 @@
 // GETs every external link in the content and reports its HTTP status. Read-only.
 import { projects } from '../src/content/projects'
 
+// Figma prototype links answer 403 to any non-browser client, so they are checked by hand
+// (open in a logged-out private window) instead.
+const MANUAL = /^https:\/\/www\.figma\.com\/proto\//
+
 let broken = 0
 for (const p of projects)
   for (const l of p.links ?? []) {
+    if (MANUAL.test(l.href)) {
+      console.log(`manual   ${p.slug} → ${l.href}`)
+      continue
+    }
     try {
       const res = await fetch(l.href, { redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 link-check' } })
       const ok = res.status < 400

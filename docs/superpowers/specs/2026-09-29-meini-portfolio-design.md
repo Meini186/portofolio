@@ -261,5 +261,8 @@ There is no GitHub remote yet, so open items are tracked here. They move to GitH
 | 6 | Fix the Shoe Factory ERD, SoundEase Q10, and the MongoDB snippet, if she wants them shown | Meini | Those images only |
 | 7 | Meini creates the GitHub repo and Vercel project, and adds Karvin as a collaborator. Then set `VITE_SITE_URL` | Meini | Deploy and correct OG URLs |
 | 8 | Decide whether to include MyStyle | Meini | Nothing |
+| 9 | The EduPal Figma file does not open when logged out. Share it as "Anyone with the link can view" if she wants it linked | Meini | One link |
+| 10 | The SnapCash critical-path diagram has a duplicate "T" node, and its arrows contradict the forward/backward pass tables. Fix it if she wants it shown | Meini | One image |
+| 11 | The Shoe Factory natural-join sample data has receipt dates (2024) before purchase dates (2025) | Meini | One image |
 
 Missing content never blocks the build. Every optional field is hidden when it is empty.

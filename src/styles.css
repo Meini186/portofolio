@@ -130,3 +130,26 @@
     transition: none;
   }
 }
+
+.gallery {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(20 12 32 / 0.92);
+}
+.lightbox::backdrop {
+  background: transparent;
+}
+.lightbox-btn {
+  position: absolute;
+  @apply grid h-11 w-11 place-items-center rounded-full bg-white/10 text-lg text-white hover:bg-white/20;
+}

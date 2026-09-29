@@ -25,7 +25,7 @@ const coverFailed = ref(false)
         :height="cover.height"
         loading="lazy"
         decoding="async"
-        class="h-full w-full object-cover object-top"
+        class="h-full w-full object-contain p-2"
         @error="coverFailed = true"
       />
     </div>

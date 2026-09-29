@@ -15,8 +15,12 @@ useHead({
   <AppNav />
   <main id="main">
     <RouterView v-slot="{ Component, route }">
+      <!-- One element root so pages with several root nodes (HomePage) can transition;
+           <Transition mode="out-in"> never finishes leaving a fragment. -->
       <Transition name="page" mode="out-in">
-        <component :is="Component" :key="route.path" />
+        <div :key="route.path">
+          <component :is="Component" />
+        </div>
       </Transition>
     </RouterView>
   </main>

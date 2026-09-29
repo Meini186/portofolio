@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.superpowers/
+.DS_Store
+*.local
+.env*
+!.env.example
+test-results/
+playwright-report/

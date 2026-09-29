@@ -46,6 +46,10 @@ describe('projects content', () => {
         expect(img.height).toBeGreaterThan(0)
       }
   })
+  it('has an Open Graph image for the home page and every project', () => {
+    expect(existsSync(resolve(publicDir, 'og/home.png'))).toBe(true)
+    for (const p of projects) expect(existsSync(resolve(publicDir, `og/${p.slug}.png`)), p.slug).toBe(true)
+  })
   it('keeps content rules from the spec', () => {
     const text = JSON.stringify(projects)
     expect(text).not.toMatch(/power query/i)

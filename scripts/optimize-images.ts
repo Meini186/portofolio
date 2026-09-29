@@ -1,5 +1,6 @@
-// Reads scripts/image-manifest.json, writes public/projects/<slug>/<out>.webp,
+// Reads scripts/image-manifest.json, writes public/images/<slug>/<out>.webp,
 // and regenerates src/content/images.generated.ts with real sizes.
+// Not public/projects/: a folder there would clash with the clean URL /projects/<slug>.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import sharp from 'sharp'
@@ -18,10 +19,10 @@ const manifest: Entry[] = JSON.parse(readFileSync(join(root, 'scripts/image-mani
 const bySlug: Record<string, Array<{ src: string; alt: string; caption?: string; width: number; height: number }>> =
   {}
 
-rmSync(join(root, 'public/projects'), { recursive: true, force: true })
+rmSync(join(root, 'public/images'), { recursive: true, force: true })
 for (const e of manifest) {
   const input = join(root, '.work/extracted', e.slug, e.source)
-  const dir = join(root, 'public/projects', e.slug)
+  const dir = join(root, 'public/images', e.slug)
   mkdirSync(dir, { recursive: true })
   let img = sharp(input)
   if (e.crop) img = img.extract(e.crop)
@@ -30,7 +31,7 @@ for (const e of manifest) {
     .webp({ quality: 80 })
     .toFile(join(dir, `${e.out}.webp`))
   ;(bySlug[e.slug] ??= []).push({
-    src: `/projects/${e.slug}/${e.out}.webp`,
+    src: `/images/${e.slug}/${e.out}.webp`,
     alt: e.alt,
     ...(e.caption ? { caption: e.caption } : {}),
     width: info.width,

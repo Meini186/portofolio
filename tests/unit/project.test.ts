@@ -68,6 +68,22 @@ describe('ScreenshotGallery', () => {
     await w.findAll('figure button')[1]!.trigger('click')
     expect(w.emitted('open')).toEqual([[1]])
   })
+  it('still opens an image after a drag that ended outside any image', async () => {
+    const w = await mountWithApp(ScreenshotGallery, { images })
+    const track = w.find('.gallery').element
+    // Native events: test-utils cannot set clientX on a jsdom MouseEvent.
+    const fire = (type: string, clientX = 0) => {
+      const e = new MouseEvent(type, { clientX, bubbles: true })
+      Object.defineProperty(e, 'pointerType', { value: 'mouse' })
+      track.dispatchEvent(e)
+    }
+    fire('pointerdown', 300)
+    fire('pointermove', 200)
+    fire('pointerleave') // drag ends off the track, so no click follows
+    fire('pointerdown', 50) // a fresh press
+    await w.findAll('figure button')[0]!.trigger('click')
+    expect(w.emitted('open')).toEqual([[0]])
+  })
   it('shows the alt text when an image fails to load', async () => {
     const w = await mountWithApp(ScreenshotGallery, { images })
     await w.findAll('img')[0]!.trigger('error')

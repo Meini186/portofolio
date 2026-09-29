@@ -14,6 +14,14 @@ describe('findViolations', () => {
   it('flags a student ID', () => {
     expect(findViolations(`NIM ${fakeId} here`)).toEqual([{ rule: 'student-id', match: fakeId }])
   })
+  it('flags a student ID glued to letters or underscores (file names, slugs)', () => {
+    expect(findViolations(`Report_${fakeId}.docx`)[0]?.rule).toBe('student-id')
+    expect(findViolations(`${fakeId}abc`)[0]?.rule).toBe('student-id')
+  })
+  it('does not flag a student-ID-like run inside a longer number', () => {
+    expect(findViolations(`9${fakeId}`)).toEqual([])
+    expect(findViolations(`${fakeId}9`)).toEqual([])
+  })
   it('flags a campus email', () => {
     expect(findViolations(`mail ${fakeCampusMail}`)[0]?.rule).toBe('campus-email')
   })

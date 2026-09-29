@@ -21,7 +21,7 @@ describe('dist', () => {
   it.each(projects.map((p) => [p.slug, p] as const))(
     'pre-renders /projects/%s with its own title and og:title',
     (slug, p) => {
-      const file = `projects/${slug}/index.html`
+      const file = `projects/${slug}.html`
       expect(existsSync(resolve(dist, file))).toBe(true)
       const html = read(file)
       expect(html).toContain(`<title>${escape(p.title)} · Meini Rusiadi</title>`)
@@ -31,10 +31,15 @@ describe('dist', () => {
   )
 
   it('gives every page a unique og:title', () => {
-    const titles = ['index.html', ...projects.map((p) => `projects/${p.slug}/index.html`)].map((f) =>
+    const titles = ['index.html', ...projects.map((p) => `projects/${p.slug}.html`)].map((f) =>
       ogTitle(read(f)),
     )
     expect(new Set(titles).size).toBe(titles.length)
+  })
+
+  it('ships the host config that serves clean URLs', () => {
+    const vercel = JSON.parse(readFileSync(resolve(dist, '../vercel.json'), 'utf8'))
+    expect(vercel).toMatchObject({ cleanUrls: true, trailingSlash: false })
   })
 
   it('writes a 404.html for the static host', () => {

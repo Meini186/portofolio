@@ -4,7 +4,9 @@ export interface Violation {
 }
 
 const RULES: Array<{ rule: string; pattern: RegExp }> = [
-  { rule: 'student-id', pattern: /\b28\d{8}\b/g },
+  // Digit boundaries, not \b: `_` and letters are word characters, so \b would miss
+  // IDs inside file names or slugs such as Report_28xxxxxxxx.
+  { rule: 'student-id', pattern: /(?<!\d)28\d{8}(?!\d)/g },
   { rule: 'campus-email', pattern: /[\w.+-]+@binus\.ac\.id/gi },
   { rule: 'canva-edit', pattern: /canva\.com\/design\/\S+?\/edit/gi },
 ]

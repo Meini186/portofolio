@@ -20,6 +20,8 @@ function scrollByPage(dir: 1 | -1) {
 
 // Mouse drag-to-scroll. Touch and trackpad use native scrolling.
 function onPointerDown(e: PointerEvent) {
+  // A new press starts fresh: a drag that ended off an image left no click to consume the flag.
+  suppressClick = false
   if (e.pointerType !== 'mouse' || !track.value) return
   drag = { x: e.clientX, left: track.value.scrollLeft, moved: false }
 }

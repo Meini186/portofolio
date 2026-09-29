@@ -1,7 +1,7 @@
 export type Category = 'data-bi' | 'database' | 'qa' | 'systems-pm' | 'ux'
 
 export interface ProjectImage {
-  src: string // public path, e.g. /projects/google-ads-dashboard/01.webp
+  src: string // public path, e.g. /images/google-ads-dashboard/01.webp
   alt: string
   caption?: string
   width: number

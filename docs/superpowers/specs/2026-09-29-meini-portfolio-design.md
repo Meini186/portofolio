@@ -49,7 +49,7 @@ Pre-rendering each route gives every project page its own `<title>` and Open Gra
 ```
 portfolio-web/
   public/
-    projects/<slug>/*.webp        # screenshots and diagrams
+    images/<slug>/*.webp          # screenshots and diagrams (not projects/: that would clash with clean URLs)
     og/<slug>.png                 # Open Graph images (1200×630)
   src/
     content/
@@ -159,7 +159,7 @@ MyStyle (UXRD, 2 members) is **not included** in v1. Its source document has lit
 2. Keep only images that show Meini's claimed parts: dashboards, diagrams, and prototype screens.
 3. Look at every kept image. Drop or crop any image that shows a student ID, a campus email, or a classmate's name.
 4. Skip EMF/WMF images, because browsers cannot display them.
-5. Convert to WebP with `scripts/optimize-images.ts`, which uses `sharp` as a devDependency. Images are at most 1600 px wide, quality 80, and saved to `public/projects/<slug>/`. On this Mac, `sips` cannot write WebP and `cwebp` is not installed.
+5. Convert to WebP with `scripts/optimize-images.ts`, which uses `sharp` as a devDependency. Images are at most 1600 px wide, quality 80, and saved to `public/images/<slug>/`. On this Mac, `sips` cannot write WebP and `cwebp` is not installed.
 
 Do **not** show these until they are fixed in the source (fixing them is Meini's choice):
 
@@ -232,7 +232,7 @@ Code that reads `window` or `document` runs only inside `onMounted`, so the SSR 
 | Content | Vitest | Unique slugs. At least 1 contribution per project. Every image `src` exists under `public/`. Every image has `alt`. Every category is valid |
 | Privacy | Vitest + `scripts/privacy-check.ts` | Fails if `src/content/` or `dist/` matches `\b28\d{8}\b` (student ID), `@binus\.ac\.id`, or `canva\.com/design/\S+/edit` |
 | Composables | Vitest (fake timers, jsdom) | `useCountUp` reaches the target. Effects are disabled when motion is off |
-| Build | Vitest on `dist/` | `dist/projects/<slug>/index.html` exists for all 11 slugs, each with its own `<title>` and `og:title` |
+| Build | Vitest on `dist/` | `dist/projects/<slug>.html` exists (flat output, served at `/projects/<slug>` by `vercel.json` cleanUrls) for all 11 slugs, each with its own `<title>` and `og:title` |
 | E2E smoke | Playwright (desktop + mobile viewport) | Home renders. The filter changes the cards. The detail page opens. The lightbox closes on Esc. An unknown slug shows 404 |
 | Manual | Browser, together | Look and feel, motion, and phone layout |
 

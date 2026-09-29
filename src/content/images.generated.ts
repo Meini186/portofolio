@@ -4,21 +4,21 @@ import type { ProjectImage } from './types'
 export const projectImages: Record<string, ProjectImage[]> = {
   "google-ads-dashboard": [
     {
-      "src": "/projects/google-ads-dashboard/01.webp",
+      "src": "/images/google-ads-dashboard/01.webp",
       "alt": "Final Tableau dashboard with a conversion-rate heatmap, cost vs sale scatter plot, daily clicks vs conversions trend, and revenue per device",
       "caption": "Final dashboard",
       "width": 945,
       "height": 500
     },
     {
-      "src": "/projects/google-ads-dashboard/02.webp",
+      "src": "/images/google-ads-dashboard/02.webp",
       "alt": "Heatmap of conversion rate by device and keyword in Tableau",
       "caption": "Conversion rate per device and keyword",
       "width": 940,
       "height": 490
     },
     {
-      "src": "/projects/google-ads-dashboard/03.webp",
+      "src": "/images/google-ads-dashboard/03.webp",
       "alt": "Line chart of daily conversions in November 2024 with a trend line",
       "caption": "Daily conversion trend",
       "width": 940,
@@ -27,14 +27,14 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "ai-acceptance-research": [
     {
-      "src": "/projects/ai-acceptance-research/01.webp",
+      "src": "/images/ai-acceptance-research/01.webp",
       "alt": "Research model: AI trust, task characteristics, and technology characteristics lead to perceived usefulness, then ease of use, then attitude",
       "caption": "Research model",
       "width": 661,
       "height": 301
     },
     {
-      "src": "/projects/ai-acceptance-research/02.webp",
+      "src": "/images/ai-acceptance-research/02.webp",
       "alt": "SmartPLS inner model with path coefficients between the six constructs",
       "caption": "Inner model from SmartPLS 4",
       "width": 1206,
@@ -43,21 +43,21 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "budgetwise-finance-dashboard": [
     {
-      "src": "/projects/budgetwise-finance-dashboard/01.webp",
+      "src": "/images/budgetwise-finance-dashboard/01.webp",
       "alt": "Excel dashboard charts: monthly expense trend, expense by category, payment method distribution, and transactions by location",
       "caption": "Dashboard charts",
       "width": 950,
       "height": 560
     },
     {
-      "src": "/projects/budgetwise-finance-dashboard/02.webp",
+      "src": "/images/budgetwise-finance-dashboard/02.webp",
       "alt": "KPI summary cards for total income, total expense, net balance, transactions, and expense ratio",
       "caption": "KPI cards",
       "width": 910,
       "height": 195
     },
     {
-      "src": "/projects/budgetwise-finance-dashboard/03.webp",
+      "src": "/images/budgetwise-finance-dashboard/03.webp",
       "alt": "Excel slicers for location, year, payment mode, and category",
       "caption": "Interactive slicers",
       "width": 945,
@@ -66,35 +66,35 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "ecommerce-order-analysis": [
     {
-      "src": "/projects/ecommerce-order-analysis/01.webp",
+      "src": "/images/ecommerce-order-analysis/01.webp",
       "alt": "Customer city column standardized to capitalized words in the query editor",
       "caption": "Standardizing city names",
       "width": 1600,
       "height": 833
     },
     {
-      "src": "/projects/ecommerce-order-analysis/02.webp",
+      "src": "/images/ecommerce-order-analysis/02.webp",
       "alt": "New Total_Item_Price column calculated as price plus shipping charges",
       "caption": "Derived column: item total with shipping",
       "width": 1600,
       "height": 833
     },
     {
-      "src": "/projects/ecommerce-order-analysis/03.webp",
+      "src": "/images/ecommerce-order-analysis/03.webp",
       "alt": "New delivery_days column calculated from purchase and delivery timestamps",
       "caption": "Derived column: delivery days",
       "width": 1600,
       "height": 833
     },
     {
-      "src": "/projects/ecommerce-order-analysis/04.webp",
+      "src": "/images/ecommerce-order-analysis/04.webp",
       "alt": "Summary table of product counts per category built from the rng_CategoryList named range",
       "caption": "Named range in use: category summary",
       "width": 681,
       "height": 612
     },
     {
-      "src": "/projects/ecommerce-order-analysis/05.webp",
+      "src": "/images/ecommerce-order-analysis/05.webp",
       "alt": "Payment method summary built with INDEX over the rng_PaymentType named range",
       "caption": "Named range in use: payment types",
       "width": 373,
@@ -103,21 +103,21 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "shoe-factory-database": [
     {
-      "src": "/projects/shoe-factory-database/01.webp",
+      "src": "/images/shoe-factory-database/01.webp",
       "alt": "Oracle APEX result of a GROUP BY query counting rows per product ID",
       "caption": "Aggregate query: GROUP BY",
       "width": 1600,
       "height": 542
     },
     {
-      "src": "/projects/shoe-factory-database/02.webp",
+      "src": "/images/shoe-factory-database/02.webp",
       "alt": "Oracle APEX result of a CROSS JOIN between the product and order tables",
       "caption": "CROSS JOIN",
       "width": 1366,
       "height": 395
     },
     {
-      "src": "/projects/shoe-factory-database/03.webp",
+      "src": "/images/shoe-factory-database/03.webp",
       "alt": "Python code that simulates a cross join over two MongoDB collections",
       "caption": "The same cross join in Python with MongoDB",
       "width": 497,
@@ -126,14 +126,14 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "soundease-database": [
     {
-      "src": "/projects/soundease-database/01.webp",
+      "src": "/images/soundease-database/01.webp",
       "alt": "Query result listing customers who bought the lowest-priced equipment",
       "caption": "Query 8 result",
       "width": 1600,
       "height": 247
     },
     {
-      "src": "/projects/soundease-database/02.webp",
+      "src": "/images/soundease-database/02.webp",
       "alt": "Query result listing staff purchases with dates and total prices",
       "caption": "Query 9 result",
       "width": 1600,
@@ -142,7 +142,7 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "snapcash-pos": [
     {
-      "src": "/projects/snapcash-pos/01.webp",
+      "src": "/images/snapcash-pos/01.webp",
       "alt": "SnapCash pricing options: Standard Rp100,000, Premium Rp300,000, and Enterprise Rp1,500,000 per month",
       "caption": "Subscription tiers from the business case",
       "width": 800,
@@ -151,42 +151,42 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "stsport-booking-system": [
     {
-      "src": "/projects/stsport-booking-system/01.webp",
+      "src": "/images/stsport-booking-system/01.webp",
       "alt": "Fishbone diagram of why StSport operations are not running smoothly",
       "caption": "Fishbone diagram",
       "width": 1024,
       "height": 768
     },
     {
-      "src": "/projects/stsport-booking-system/02.webp",
+      "src": "/images/stsport-booking-system/02.webp",
       "alt": "Context diagram of the StSport system with customer, partner staff, and admin",
       "caption": "Context diagram",
       "width": 1600,
       "height": 970
     },
     {
-      "src": "/projects/stsport-booking-system/03.webp",
+      "src": "/images/stsport-booking-system/03.webp",
       "alt": "Use case diagram with 7 use cases for customer, partner staff, and admin",
       "caption": "Use case diagram",
       "width": 1600,
       "height": 1613
     },
     {
-      "src": "/projects/stsport-booking-system/04.webp",
+      "src": "/images/stsport-booking-system/04.webp",
       "alt": "Class diagram of bookings, courts, sports equipment, and purchase forms",
       "caption": "Class diagram",
       "width": 1181,
       "height": 767
     },
     {
-      "src": "/projects/stsport-booking-system/05.webp",
+      "src": "/images/stsport-booking-system/05.webp",
       "alt": "State transition diagram of a court booking from available to booked or cancelled",
       "caption": "State transition: booking",
       "width": 1600,
       "height": 284
     },
     {
-      "src": "/projects/stsport-booking-system/06.webp",
+      "src": "/images/stsport-booking-system/06.webp",
       "alt": "Activity diagram of a customer booking a sports court",
       "caption": "Activity diagram: booking a court",
       "width": 1600,
@@ -195,21 +195,21 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "tix-id-redesign": [
     {
-      "src": "/projects/tix-id-redesign/01.webp",
+      "src": "/images/tix-id-redesign/01.webp",
       "alt": "TIX ID home page before and after the redesign, with a vertical movie list",
       "caption": "Home page: before and after",
       "width": 853,
       "height": 480
     },
     {
-      "src": "/projects/tix-id-redesign/02.webp",
+      "src": "/images/tix-id-redesign/02.webp",
       "alt": "Bottom navigation before and after, with new F&B and Profile tabs",
       "caption": "Bottom navigation: before and after",
       "width": 853,
       "height": 480
     },
     {
-      "src": "/projects/tix-id-redesign/03.webp",
+      "src": "/images/tix-id-redesign/03.webp",
       "alt": "New ordering flow where tickets and snacks are paid in one checkout",
       "caption": "Tickets and F&B in one checkout",
       "width": 853,
@@ -218,28 +218,28 @@ export const projectImages: Record<string, ProjectImage[]> = {
   ],
   "edupal-ai-teacher": [
     {
-      "src": "/projects/edupal-ai-teacher/01.webp",
+      "src": "/images/edupal-ai-teacher/01.webp",
       "alt": "EduPal landing screen with sign-up and sign-in buttons",
       "caption": "Landing screen",
       "width": 333,
       "height": 712
     },
     {
-      "src": "/projects/edupal-ai-teacher/02.webp",
+      "src": "/images/edupal-ai-teacher/02.webp",
       "alt": "Role selection screen: sign up as teacher or as student",
       "caption": "Sign up by role",
       "width": 352,
       "height": 712
     },
     {
-      "src": "/projects/edupal-ai-teacher/03.webp",
+      "src": "/images/edupal-ai-teacher/03.webp",
       "alt": "Student sign-up form",
       "caption": "Sign-up form",
       "width": 339,
       "height": 705
     },
     {
-      "src": "/projects/edupal-ai-teacher/04.webp",
+      "src": "/images/edupal-ai-teacher/04.webp",
       "alt": "List of school subjects with colored cards",
       "caption": "Subject list",
       "width": 345,

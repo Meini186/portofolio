@@ -35,6 +35,8 @@ export function useCountUp(
 
   onMounted(() => {
     if (!el.value || !motionAllowed()) return
+    // A number that is already on screen keeps its final value; dropping it to 0 would flash.
+    if (el.value.getBoundingClientRect().top < window.innerHeight) return
     value.value = 0
     observer = new IntersectionObserver(
       (entries) => {

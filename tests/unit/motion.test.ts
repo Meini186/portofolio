@@ -24,6 +24,7 @@ function host(use: (el: Ref<HTMLElement | null>) => unknown) {
 }
 
 afterEach(() => {
+  vi.restoreAllMocks()
   vi.useRealTimers()
   document.body.innerHTML = ''
 })
@@ -63,7 +64,14 @@ describe('useCountUp', () => {
     intersect(el)
     expect((exposed as { value: number }).value).toBe(2125)
   })
+  it('keeps the final value for a number that is already on screen at load (no flash to 0)', async () => {
+    const { exposed } = host((el) => useCountUp(2125, el)) // jsdom rect top 0 = inside the viewport
+    await nextTick()
+    expect((exposed as { value: number }).value).toBe(2125)
+  })
   it('counts from 0 to the target once visible', async () => {
+    const below = { top: 5000, left: 0, width: 10, height: 10, right: 10, bottom: 5010, x: 0, y: 5000, toJSON() {} }
+    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue(below as DOMRect)
     vi.useFakeTimers({ toFake: ['requestAnimationFrame', 'cancelAnimationFrame', 'performance', 'Date'] })
     const { exposed, el } = host((el) => useCountUp(2125, el))
     await nextTick()

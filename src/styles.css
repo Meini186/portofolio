@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #fbf8ff;
+  --color-bg-2: #f5eefc;
+  --color-surface: #ffffff;
+  --color-ink: #1e1530;
+  --color-muted: #6b5a80;
+  --color-primary: #6d28d9;
+  --color-primary-ink: #6b21a8;
+  --color-primary-soft: #ede4fb;
+  --color-accent: #ec4899;
+  --color-line: #eadcfb;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply min-h-screen bg-bg font-sans text-ink antialiased;
+    background-image: linear-gradient(160deg, var(--color-bg), var(--color-bg-2));
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto max-w-6xl px-4 py-16 sm:px-6;
+  }
+  .section-title {
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.14em] text-primary uppercase;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-xs text-primary-ink;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-10px_rgb(109_40_217/0.6)] transition-transform duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-3 text-sm font-semibold text-primary transition-transform duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 50;
+  @apply rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Route fade */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Reveal (classes are added by useReveal only after mount) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal-in {
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Project grid filter */
+.grid-enter-active,
+.grid-leave-active {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+.grid-enter-from,
+.grid-leave-to {
+  opacity: 0;
+  transform: scale(0.97);
+}
+.grid-move {
+  transition: transform 0.3s ease;
+}
+
+/* Hero background drift */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-blob {
+    animation: drift 12s ease-in-out infinite alternate;
+  }
+  .hero-blob--2 {
+    animation-delay: -6s;
+  }
+}
+@keyframes drift {
+  to {
+    transform: translate(-30px, 20px) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active,
+  .grid-enter-active,
+  .grid-leave-active,
+  .grid-move {
+    transition: none;
+  }
+}

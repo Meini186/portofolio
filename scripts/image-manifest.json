@@ -1,0 +1,43 @@
+[
+  { "slug": "google-ads-dashboard", "source": "page-017.png", "out": "01", "alt": "Final Tableau dashboard with a conversion-rate heatmap, cost vs sale scatter plot, daily clicks vs conversions trend, and revenue per device", "caption": "Final dashboard", "crop": { "left": 140, "top": 700, "width": 945, "height": 500 } },
+  { "slug": "google-ads-dashboard", "source": "page-015.png", "out": "02", "alt": "Heatmap of conversion rate by device and keyword in Tableau", "caption": "Conversion rate per device and keyword", "crop": { "left": 140, "top": 860, "width": 940, "height": 490 } },
+  { "slug": "google-ads-dashboard", "source": "page-015.png", "out": "03", "alt": "Line chart of daily conversions in November 2024 with a trend line", "caption": "Daily conversion trend", "crop": { "left": 140, "top": 140, "width": 940, "height": 495 } },
+
+  { "slug": "ai-acceptance-research", "source": "image1.png", "out": "01", "alt": "Research model: AI trust, task characteristics, and technology characteristics lead to perceived usefulness, then ease of use, then attitude", "caption": "Research model" },
+  { "slug": "ai-acceptance-research", "source": "image3.png", "out": "02", "alt": "SmartPLS inner model with path coefficients between the six constructs", "caption": "Inner model from SmartPLS 4" },
+
+  { "slug": "budgetwise-finance-dashboard", "source": "page-013.png", "out": "01", "alt": "Excel dashboard charts: monthly expense trend, expense by category, payment method distribution, and transactions by location", "caption": "Dashboard charts", "crop": { "left": 120, "top": 120, "width": 950, "height": 560 } },
+  { "slug": "budgetwise-finance-dashboard", "source": "page-012.png", "out": "02", "alt": "KPI summary cards for total income, total expense, net balance, transactions, and expense ratio", "caption": "KPI cards", "crop": { "left": 120, "top": 148, "width": 910, "height": 195 } },
+  { "slug": "budgetwise-finance-dashboard", "source": "page-012.png", "out": "03", "alt": "Excel slicers for location, year, payment mode, and category", "caption": "Interactive slicers", "crop": { "left": 120, "top": 785, "width": 945, "height": 260 } },
+
+  { "slug": "ecommerce-order-analysis", "source": "image71.png", "out": "01", "alt": "Customer city column standardized to capitalized words in the query editor", "caption": "Standardizing city names", "crop": { "left": 0, "top": 0, "width": 1920, "height": 1000 } },
+  { "slug": "ecommerce-order-analysis", "source": "image28.png", "out": "02", "alt": "New Total_Item_Price column calculated as price plus shipping charges", "caption": "Derived column: item total with shipping", "crop": { "left": 0, "top": 0, "width": 1920, "height": 1000 } },
+  { "slug": "ecommerce-order-analysis", "source": "image44.png", "out": "03", "alt": "New delivery_days column calculated from purchase and delivery timestamps", "caption": "Derived column: delivery days", "crop": { "left": 0, "top": 0, "width": 1920, "height": 1000 } },
+  { "slug": "ecommerce-order-analysis", "source": "image4.png", "out": "04", "alt": "Summary table of product counts per category built from the rng_CategoryList named range", "caption": "Named range in use: category summary" },
+  { "slug": "ecommerce-order-analysis", "source": "image11.png", "out": "05", "alt": "Payment method summary built with INDEX over the rng_PaymentType named range", "caption": "Named range in use: payment types" },
+
+  { "slug": "shoe-factory-database", "source": "image88.png", "out": "01", "alt": "Oracle APEX result of a GROUP BY query counting rows per product ID", "caption": "Aggregate query: GROUP BY", "crop": { "left": 0, "top": 180, "width": 1920, "height": 650 } },
+  { "slug": "shoe-factory-database", "source": "image111.png", "out": "02", "alt": "Oracle APEX result of a CROSS JOIN between the product and order tables", "caption": "CROSS JOIN", "crop": { "left": 0, "top": 0, "width": 1366, "height": 395 } },
+  { "slug": "shoe-factory-database", "source": "image6.png", "out": "03", "alt": "Python code that simulates a cross join over two MongoDB collections", "caption": "The same cross join in Python with MongoDB" },
+
+  { "slug": "soundease-database", "source": "image32.png", "out": "01", "alt": "Query result listing customers who bought the lowest-priced equipment", "caption": "Query 8 result" },
+  { "slug": "soundease-database", "source": "image33.png", "out": "02", "alt": "Query result listing staff purchases with dates and total prices", "caption": "Query 9 result" },
+
+  { "slug": "snapcash-pos", "source": "page-005.png", "out": "01", "alt": "SnapCash pricing options: Standard Rp100,000, Premium Rp300,000, and Enterprise Rp1,500,000 per month", "caption": "Subscription tiers from the business case", "crop": { "left": 195, "top": 190, "width": 800, "height": 975 } },
+
+  { "slug": "stsport-booking-system", "source": "image43.png", "out": "01", "alt": "Fishbone diagram of why StSport operations are not running smoothly", "caption": "Fishbone diagram" },
+  { "slug": "stsport-booking-system", "source": "image38.png", "out": "02", "alt": "Context diagram of the StSport system with customer, partner staff, and admin", "caption": "Context diagram" },
+  { "slug": "stsport-booking-system", "source": "image55.png", "out": "03", "alt": "Use case diagram with 7 use cases for customer, partner staff, and admin", "caption": "Use case diagram" },
+  { "slug": "stsport-booking-system", "source": "image44.png", "out": "04", "alt": "Class diagram of bookings, courts, sports equipment, and purchase forms", "caption": "Class diagram" },
+  { "slug": "stsport-booking-system", "source": "image20.png", "out": "05", "alt": "State transition diagram of a court booking from available to booked or cancelled", "caption": "State transition: booking" },
+  { "slug": "stsport-booking-system", "source": "image42.png", "out": "06", "alt": "Activity diagram of a customer booking a sports court", "caption": "Activity diagram: booking a court" },
+
+  { "slug": "tix-id-redesign", "source": "image9.png", "out": "01", "alt": "TIX ID home page before and after the redesign, with a vertical movie list", "caption": "Home page: before and after", "crop": { "left": 353, "top": 182, "width": 853, "height": 480 } },
+  { "slug": "tix-id-redesign", "source": "image10.png", "out": "02", "alt": "Bottom navigation before and after, with new F&B and Profile tabs", "caption": "Bottom navigation: before and after", "crop": { "left": 353, "top": 182, "width": 853, "height": 480 } },
+  { "slug": "tix-id-redesign", "source": "image14.png", "out": "03", "alt": "New ordering flow where tickets and snacks are paid in one checkout", "caption": "Tickets and F&B in one checkout", "crop": { "left": 353, "top": 182, "width": 853, "height": 480 } },
+
+  { "slug": "edupal-ai-teacher", "source": "image1.png", "out": "01", "alt": "EduPal landing screen with sign-up and sign-in buttons", "caption": "Landing screen" },
+  { "slug": "edupal-ai-teacher", "source": "image5.png", "out": "02", "alt": "Role selection screen: sign up as teacher or as student", "caption": "Sign up by role" },
+  { "slug": "edupal-ai-teacher", "source": "image3.png", "out": "03", "alt": "Student sign-up form", "caption": "Sign-up form" },
+  { "slug": "edupal-ai-teacher", "source": "image15.png", "out": "04", "alt": "List of school subjects with colored cards", "caption": "Subject list" }
+]
